@@ -5,8 +5,13 @@ import { V1Service } from './v1.service';
 export class V1Controller {
   constructor(private readonly appService: V1Service) {}
 
-  @Get()
+  @Get('/version')
   getVersion(): string {
     return this.appService.getVersion();
+  }
+
+  @Get('/ping')
+  getPing(): string {
+    return this.appService.getPing();
   }
 }
